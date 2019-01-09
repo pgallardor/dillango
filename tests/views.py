@@ -20,7 +20,6 @@ def json_list(request):
 @csrf_exempt
 def receive_file(request):
     img64 = request.POST.get('media')
-    print(img64)
     img = open("sanik_arrived.png", "wb")
-    img.write(img64.decode('base64'))
+    img.write(img64)
     HttpResponse("Ayy lmao")
