@@ -22,4 +22,4 @@ def receive_file(request):
     img64 = request.POST.get('media')
     img = open("sanik_arrived.png", "wb")
     img.write(str.encode(img64))
-    HttpResponse("Ayy lmao")
+    return JsonResponse({'success': 'true'})
