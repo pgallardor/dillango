@@ -16,7 +16,7 @@ def json_list(request):
         {'field': 'content2'}
     ], safe=False)
 
-
+@csrf_exempt
 def receive_file(request):
     print(request)
     JsonResponse({'success': 'true'})
