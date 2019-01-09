@@ -1,7 +1,6 @@
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 import base64
-import json
 # Create your views here.
 
 
@@ -22,7 +21,7 @@ def json_list(request):
 def receive_file(request):
     img64 = request.POST.get('media')
     img = open("sanik_arrived.png", "wb")
-    decoded = base64.b64decode(str(img64))
+    decoded = base64.decodebytes(img64)
     img.write(decoded)
 
     return JsonResponse({'success': 'true'})
