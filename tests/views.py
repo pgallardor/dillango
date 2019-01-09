@@ -27,4 +27,4 @@ def receive_file(request):
 
         return JsonResponse({'success': 'true'})
 
-    return HttpResponse('<p>Subete algo prro</p>')
+    return HttpResponse('<h1>Subete algo prro</h1>')
