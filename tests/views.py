@@ -18,5 +18,5 @@ def json_list(request):
 
 @csrf_exempt
 def receive_file(request):
-    print(request)
+    print(request.body)
     JsonResponse({'success': 'true'})
