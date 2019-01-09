@@ -21,6 +21,6 @@ def json_list(request):
 def receive_file(request):
     img64 = request.POST.get('media')
     # img = open("sanik_arrived.png", "wb")
-    print(str.encode(img64, 'utf-8'))
+    print(str.encode(img64, 'base-64'))
     # img.write()
     return JsonResponse({'success': 'true'})
