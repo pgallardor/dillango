@@ -15,3 +15,8 @@ def json_list(request):
         {'field': 'content1'},
         {'field': 'content2'}
     ], safe=False)
+
+
+def receive_file(request):
+    print(request)
+    JsonResponse({'success': 'true'})
