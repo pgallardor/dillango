@@ -19,9 +19,12 @@ def json_list(request):
 
 @csrf_exempt
 def receive_file(request):
-    img64 = request.POST.get('media')
-    img = open("khajiit.jpg", "wb")
-    decoded = base64.b64decode(img64)
-    img.write(decoded)
+    if request.method == 'POST':
+        img64 = request.POST.get('media')
+        img = open("khajiit.jpg", "wb")
+        decoded = base64.b64decode(img64)
+        img.write(decoded)
 
-    return JsonResponse({'success': 'true'})
+        return JsonResponse({'success': 'true'})
+
+    return HttpResponse('<p>Subete algo prro</p>')
