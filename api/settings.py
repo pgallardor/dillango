@@ -25,7 +25,7 @@ SECRET_KEY = 'rlz5p2_gw1rgp7b*&uak%2q()z%du+kys3#u@h(=&5swk5+g4='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['djangotesteroni.herokuapp.com', '192.168.1.13']
+ALLOWED_HOSTS = ['djangotesteroni.herokuapp.com', '192.168.1.13', 'localhost']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tests'
 ]
 
 MIDDLEWARE = [
@@ -75,8 +76,12 @@ WSGI_APPLICATION = 'api.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'footshot',
+        'USER': 'postgres',
+        'PASSWORD': '12345',
+        'HOST': '192.168.1.13',
+        'PORT': '5432'
     }
 }
 

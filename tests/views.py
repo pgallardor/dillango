@@ -1,5 +1,6 @@
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+from tests.models import Ficha, Paciente
 import base64
 # Create your views here.
 
@@ -28,3 +29,18 @@ def receive_file(request):
         return JsonResponse({'success': 'true'})
 
     return HttpResponse('<h1>Subete algo prro</h1>')
+
+
+@csrf_exempt
+def create_record(request):
+    if request.method == 'POST':
+        list = request.POST.copy()
+        paciente = Paciente.objects.get(rut=list.get('rut'))
+        ficha = Ficha(
+            rut=paciente,
+            imagenes=list.get('imagenes')
+        )
+        ficha.save()
+        return JsonResponse({'success': 'true'})
+
+    return HttpResponse('<h1>Crear la ficha con POST</h1>')
