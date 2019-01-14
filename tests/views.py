@@ -21,7 +21,7 @@ def single_json(request):
 
     print(measures)
     f = open('../temps.txt', 'w+')
-    for k, v in measures:
+    for k, v in measures.items():
         f.write("%s : " % k)
         for t in v:
             f.write("%s " % t)
