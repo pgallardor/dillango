@@ -9,6 +9,7 @@ import base64
 def single_json(request):
     stringed = request.body.decode('utf-8')
     measures = {}
+    list = []
     for item in stringed.split('&'):
         list += [item.split('=')]
 
