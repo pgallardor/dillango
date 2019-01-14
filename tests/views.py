@@ -14,6 +14,7 @@ def single_json(request):
         list += [item.split('=')]
 
     for tup in list:
+        if tup.length == 0: continue
         if tup[0] in measures:
             measures[tup[0]] += tup[1]
         else:
