@@ -10,7 +10,7 @@ def single_json(request):
     stringed = request.body.decode('utf-8')
     list = []
     for item in stringed.split('&'):
-        list += item.split('=')
+        list += [item.split('=')]
 
     print(list)
     return JsonResponse({'field': 'content'})
