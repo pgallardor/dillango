@@ -16,7 +16,7 @@ def single_json(request):
     for tup in list:
         if tup[0] in measures:
             measures[tup[0]] += tup[1]
-        else:
+        elif tup[0] != '':
             measures[tup[0]] = [tup[1]]
 
     print(measures)
