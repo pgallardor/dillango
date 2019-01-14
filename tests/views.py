@@ -8,6 +8,7 @@ import base64
 @csrf_exempt
 def single_json(request):
     stringed = request.body.decode('utf-8')
+    print(stringed)
     measures = {}
     list = []
     for item in stringed.split('&'):
