@@ -7,7 +7,7 @@ import base64
 
 @csrf_exempt
 def single_json(request):
-    stringed = str(request.body)
+    stringed = request.body.decode('utf-8')
     print(stringed.split('='))
 
     return JsonResponse({'field': 'content'})
