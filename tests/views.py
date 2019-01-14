@@ -14,11 +14,10 @@ def single_json(request):
         list += [item.split('=')]
 
     for tup in list:
-        print(tup)
-        '''if tup[0] in measures:
-            measures[tup[0]] += tup[1]
+        if tup[0] in measures:
+            measures[tup[0]].append(tup[1])
         elif tup[0] != '':
-            measures[tup[0]] = tup[1]'''
+            measures[tup[0]] = [tup[1]]
 
     print(measures)
     return JsonResponse({'field': 'content'})
