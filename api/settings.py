@@ -25,7 +25,7 @@ SECRET_KEY = 'rlz5p2_gw1rgp7b*&uak%2q()z%du+kys3#u@h(=&5swk5+g4='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['djangotesteroni.herokuapp.com', '192.168.1.13', 'localhost']
+ALLOWED_HOSTS = ['djangotesteroni.herokuapp.com', '192.168.1.46', 'localhost']
 
 
 # Application definition
@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'footshot',
         'USER': 'postgres',
         'PASSWORD': '12345',
-        'HOST': '192.168.1.13',
+        'HOST': '192.168.1.46',
         'PORT': '5432'
     }
 }

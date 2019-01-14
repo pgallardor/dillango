@@ -7,7 +7,9 @@ import base64
 
 @csrf_exempt
 def single_json(request):
-    print(request.body)
+    stringed = str(request.body)
+    print('='.split(stringed))
+
     return JsonResponse({'field': 'content'})
 
 
@@ -41,6 +43,7 @@ def create_record(request):
             imagenes=list.get('imagenes')
         )
         ficha.save()
+        print(ficha.id)
         return JsonResponse({'success': 'true'})
 
     return HttpResponse('<h1>Crear la ficha con POST</h1>')
