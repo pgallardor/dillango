@@ -8,17 +8,17 @@ import base64
 @csrf_exempt
 def single_json(request):
     stringed = request.body.decode('utf-8')
-    print(stringed)
     measures = {}
     list = []
     for item in stringed.split('&'):
         list += [item.split('=')]
 
     for tup in list:
-        if tup[0] in measures:
+        print(tup)
+        '''if tup[0] in measures:
             measures[tup[0]] += tup[1]
         elif tup[0] != '':
-            measures[tup[0]] = [tup[1]]
+            measures[tup[0]] = tup[1]'''
 
     print(measures)
     return JsonResponse({'field': 'content'})
