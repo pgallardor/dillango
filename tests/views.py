@@ -20,6 +20,13 @@ def single_json(request):
             measures[tup[0]] = [tup[1]]
 
     print(measures)
+    f = open('../temps.txt', 'w+')
+    for k, v in measures:
+        f.write("%s : " % k)
+        for t in v:
+            f.write("%s " % t)
+        f.write('\n')
+    f.close
     return JsonResponse({'field': 'content'})
 
 
