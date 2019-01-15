@@ -26,7 +26,7 @@ def single_json(request):
         for t in v:
             f.write("%s " % t)
         f.write('\n')
-    f.close
+    f.close()
     return JsonResponse({'field': 'content'})
 
 
