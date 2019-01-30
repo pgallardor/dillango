@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'footshot',
         'USER': 'postgres',
         'PASSWORD': '12345',
-        'HOST': '192.168.1.46',
+        'HOST': '192.168.1.186',
         'PORT': '5432'
     }
 }

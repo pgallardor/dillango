@@ -2,6 +2,7 @@ from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from tests.models import Ficha, Paciente
 import base64
+from .utils.render import Render
 # Create your views here.
 
 
@@ -61,6 +62,12 @@ def create_record(request):
         )
         ficha.save()
         print(ficha.id)
+
+        # let's try it here
         return JsonResponse({'success': 'true'})
 
     return HttpResponse('<h1>Crear la ficha con POST</h1>')
+
+
+def pdf_test(request):
+    return Render.render('pdf.html', {})

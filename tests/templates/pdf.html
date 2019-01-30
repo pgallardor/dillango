@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+    <head>
+        <title>PDF Test</title>
+    </head>
+    <body>
+        <h1>Este es un PDF</h1>
+        <p>No sé si la raspi lo podrá recibir</p>
+        <h2>File list</h2>
+        {% for item in list %}
+            <p>{{ item }}</p>
+        {% endfor %}
+        {% load pdf_filters %}
+        <img src="{{ "tests/static/tests/VIS_21.png" | get64 }}" alt="feet">
+    </body>
+</html>
